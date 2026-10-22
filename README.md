@@ -1,6 +1,6 @@
 # Codex sidebar usage
 
-A small userscript showing **5-hour** and **weekly** percentages remaining and local reset times beside your ChatGPT profile. No dependencies or build step.
+A small userscript showing **5-hour** and **weekly** percentages remaining and reset countdowns beside your ChatGPT profile. No dependencies or build step.
 
 ## Install
 
@@ -10,7 +10,7 @@ A small userscript showing **5-hour** and **weekly** percentages remaining and l
 
 If the link opens as plain text, create a new script in your userscript manager, paste the contents of `codex-usage.user.js`, and save. Future updates use the same GitLab URL.
 
-The compact display uses two aligned rows, for example `5h 80% ↻14:30` and `w 65% ↻Fri 14:30`. Percentages are remaining usage; `↻` marks the reset time in your local timezone using a 24-hour clock. The weekly reset includes the weekday. Hover for full reset dates; click to open usage settings. A dash means that value is unavailable.
+The compact display uses two aligned rows, for example `5h 80% ↻2h 15m` and `w 65% ↻3d 4h`. Percentages are remaining usage; `↻` marks the time until reset, using days/hours, hours/minutes, or minutes as appropriate. Under a minute shows `<1m`; a reset time that has arrived shows `now`. Hover for full reset dates in your local timezone; click to open usage settings. A dash means that value is unavailable.
 
 The display refreshes every minute while the tab is visible, and when you return to it.
 

@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Codex usage in sidebar
 // @namespace    https://gitlab.com/zizhengwu/codex-usage
-// @version      1.1.0
-// @description  Show remaining Codex limits and local reset times beside your profile.
+// @version      1.2.0
+// @description  Show remaining Codex limits and reset countdowns beside your profile.
 // @author       zizhengwu
 // @homepageURL  https://gitlab.com/zizhengwu/codex-usage
 // @supportURL   https://gitlab.com/zizhengwu/codex-usage/-/issues
@@ -46,13 +46,21 @@
   badge.title = 'Codex usage: loading…';
 
   const labels = ['5-hour', 'Weekly'];
-  const clock = new Intl.DateTimeFormat(undefined, {
-    hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
-  });
-  const weekday = new Intl.DateTimeFormat(undefined, { weekday: 'short' });
+  function resetCountdown(reset, now) {
+    const remaining = reset.getTime() - now;
+    if (remaining <= 0) return 'now';
+    if (remaining < 60000) return '<1m';
+    const minutes = Math.floor(remaining / 60000);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    if (days) return `${days}d${hours % 24 ? ` ${hours % 24}h` : ''}`;
+    if (hours) return `${hours}h${minutes % 60 ? ` ${minutes % 60}m` : ''}`;
+    return `${minutes}m`;
+  }
 
   function render(windows = []) {
     const details = [];
+    const now = Date.now();
     badge.replaceChildren();
     ['5h', 'w'].forEach((label, i) => {
       const window = windows[i];
@@ -62,8 +70,7 @@
       const reset = typeof window?.reset_at === 'number' && window.reset_at > 0
         ? new Date(window.reset_at * 1000) : null;
       const validReset = reset && Number.isFinite(reset.getTime());
-      const time = validReset
-        ? `${i === 1 ? weekday.format(reset) + ' ' : ''}${clock.format(reset)}` : '—';
+      const time = validReset ? resetCountdown(reset, now) : '—';
       for (const text of [label, left, `↻${time}`]) {
         const cell = document.createElement('span');
         cell.textContent = text;
@@ -104,7 +111,7 @@
       if (!response.ok) throw new Error(`Usage: ${response.status}`);
       const data = await response.json();
       const windows = [data.rate_limit?.primary_window, data.rate_limit?.secondary_window];
-      badge.title = 'Codex remaining usage (↻ local reset time)\n' + render(windows).join('\n');
+      badge.title = 'Codex remaining usage (↻ time until reset)\n' + render(windows).join('\n');
     } catch (error) {
       render();
       badge.title = `Codex usage unavailable: ${error.message}. Retrying every minute.`;
