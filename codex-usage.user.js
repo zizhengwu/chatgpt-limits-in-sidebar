@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Codex usage in sidebar
 // @namespace    https://gitlab.com/zizhengwu/codex-usage
-// @version      1.2.0
+// @version      1.2.1
 // @description  Show remaining Codex limits and reset countdowns beside your profile.
 // @author       zizhengwu
 // @homepageURL  https://gitlab.com/zizhengwu/codex-usage
@@ -23,8 +23,8 @@
     #codex-usage {
       flex: 0 0 auto;
       display: grid;
-      grid-template-columns: auto auto auto;
-      column-gap: 5px;
+      grid-template-columns: max-content 4ch max-content minmax(7ch, max-content);
+      column-gap: 4px;
       margin-left: auto;
       color: inherit;
       font-size: 11px;
@@ -35,8 +35,10 @@
       pointer-events: auto;
     }
     #codex-usage:hover { opacity: .7; }
-    #codex-usage > :nth-child(3n + 2),
-    #codex-usage > :nth-child(3n) { text-align: right; }
+    #codex-usage > .usage-percent { text-align: right; }
+    #codex-usage > .usage-reset { text-align: center; }
+    #codex-usage > .usage-label,
+    #codex-usage > .usage-countdown { text-align: left; }
   `;
   document.head.append(style);
 
@@ -71,8 +73,12 @@
         ? new Date(window.reset_at * 1000) : null;
       const validReset = reset && Number.isFinite(reset.getTime());
       const time = validReset ? resetCountdown(reset, now) : '—';
-      for (const text of [label, left, `↻${time}`]) {
+      for (const [name, text] of [
+        ['label', label], ['percent', left], ['reset', '↻'], ['countdown', time]
+      ]) {
         const cell = document.createElement('span');
+        cell.className = `usage-${name}`;
+        if (name === 'reset') cell.setAttribute('aria-hidden', 'true');
         cell.textContent = text;
         badge.append(cell);
       }
