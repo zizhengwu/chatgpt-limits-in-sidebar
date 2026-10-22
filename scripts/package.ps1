@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 $manifest = Get-Content -LiteralPath (Join-Path $projectRoot 'manifest.json') -Raw | ConvertFrom-Json
-$source = Get-Content -LiteralPath (Join-Path $projectRoot 'codex-usage.user.js') -Raw
+$source = Get-Content -LiteralPath (Join-Path $projectRoot 'chatgpt-limits.user.js') -Raw
 if ($source -notmatch '(?m)^// @version\s+([^\r\n]+)' -or $Matches[1].Trim() -ne $manifest.version) {
     throw 'The manifest and userscript versions must match.'
 }
@@ -16,7 +16,7 @@ foreach ($file in $files) {
 }
 $dist = Join-Path $projectRoot 'dist'
 New-Item -ItemType Directory -Path $dist -Force | Out-Null
-$zipPath = Join-Path $dist "codex-usage-$($manifest.version).zip"
+$zipPath = Join-Path $dist "chatgpt-limits-$($manifest.version).zip"
 $stream = [System.IO.File]::Open($zipPath, [System.IO.FileMode]::Create)
 try {
     $archive = [System.IO.Compression.ZipArchive]::new($stream, [System.IO.Compression.ZipArchiveMode]::Create)

@@ -1,5 +1,5 @@
 {
-  "name": "codex-sidebar-usage",
+  "name": "chatgpt-limits-in-sidebar",
   "private": true,
   "scripts": {
     "test": "node --test tests/extension.test.cjs",

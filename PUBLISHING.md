@@ -6,7 +6,7 @@ Run in PowerShell 7:
 ./scripts/package.ps1
 ```
 
-For updates, increase the version in both `manifest.json` and `codex-usage.user.js`, then rebuild.
+For updates, increase the version in both `manifest.json` and `chatgpt-limits.user.js`, then rebuild.
 
 ## Tests
 

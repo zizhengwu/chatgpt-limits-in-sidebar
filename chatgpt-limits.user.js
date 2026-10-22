@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name         Codex usage in sidebar
-// @namespace    https://github.com/zizhengwu/codex-limits-in-sidebar
+// @name         ChatGPT limits in sidebar
+// @namespace    https://github.com/zizhengwu/chatgpt-limits-in-sidebar
 // @version      1.2.1
-// @description  Show remaining Codex limits and reset countdowns beside your profile.
+// @description  Show remaining ChatGPT limits and reset countdowns beside your profile.
 // @author       zizhengwu
-// @homepageURL  https://github.com/zizhengwu/codex-limits-in-sidebar
-// @supportURL   https://github.com/zizhengwu/codex-limits-in-sidebar/issues
-// @downloadURL  https://raw.githubusercontent.com/zizhengwu/codex-limits-in-sidebar/main/codex-usage.user.js
-// @updateURL    https://raw.githubusercontent.com/zizhengwu/codex-limits-in-sidebar/main/codex-usage.user.js
+// @homepageURL  https://github.com/zizhengwu/chatgpt-limits-in-sidebar
+// @supportURL   https://github.com/zizhengwu/chatgpt-limits-in-sidebar/issues
+// @downloadURL  https://raw.githubusercontent.com/zizhengwu/chatgpt-limits-in-sidebar/main/chatgpt-limits.user.js
+// @updateURL    https://raw.githubusercontent.com/zizhengwu/chatgpt-limits-in-sidebar/main/chatgpt-limits.user.js
 // @match        https://chatgpt.com/*
 // @grant        none
 // @run-at       document-idle
@@ -15,12 +15,12 @@
 
 (() => {
   'use strict';
-  if (document.getElementById('codex-usage-style')) return;
+  if (document.getElementById('chatgpt-limits-style')) return;
 
   const style = document.createElement('style');
-  style.id = 'codex-usage-style';
+  style.id = 'chatgpt-limits-style';
   style.textContent = `
-    #codex-usage {
+    #chatgpt-limits {
       flex: 0 0 auto;
       display: grid;
       grid-template-columns: max-content 4ch max-content minmax(7ch, max-content);
@@ -34,18 +34,18 @@
       white-space: nowrap;
       pointer-events: auto;
     }
-    #codex-usage:hover { opacity: .7; }
-    #codex-usage > .usage-percent { text-align: right; }
-    #codex-usage > .usage-reset { text-align: center; }
-    #codex-usage > .usage-label,
-    #codex-usage > .usage-countdown { text-align: left; }
+    #chatgpt-limits:hover { opacity: .7; }
+    #chatgpt-limits > .limits-percent { text-align: right; }
+    #chatgpt-limits > .limits-reset { text-align: center; }
+    #chatgpt-limits > .limits-label,
+    #chatgpt-limits > .limits-countdown { text-align: left; }
   `;
   document.head.append(style);
 
   const badge = document.createElement('a');
-  badge.id = 'codex-usage';
+  badge.id = 'chatgpt-limits';
   badge.href = '/settings/usage?tab=overview';
-  badge.title = 'Codex usage: loading…';
+  badge.title = 'ChatGPT limits: loading…';
 
   const labels = ['5-hour', 'Weekly'];
   function resetCountdown(reset, now) {
@@ -77,14 +77,14 @@
         ['label', label], ['percent', left], ['reset', '↻'], ['countdown', time]
       ]) {
         const cell = document.createElement('span');
-        cell.className = `usage-${name}`;
+        cell.className = `limits-${name}`;
         if (name === 'reset') cell.setAttribute('aria-hidden', 'true');
         cell.textContent = text;
         badge.append(cell);
       }
       details.push(`${labels[i]}: ${left === '—' ? 'unavailable' : left + ' left'}; resets: ${validReset ? reset.toLocaleString() : 'unavailable'}`);
     });
-    badge.setAttribute('aria-label', `Codex remaining usage. ${details.join('. ')}. Open usage settings.`);
+    badge.setAttribute('aria-label', `ChatGPT remaining limits. ${details.join('. ')}. Open limit settings.`);
     return details;
   }
   render();
@@ -114,13 +114,13 @@
         headers: { Authorization: `Bearer ${session.accessToken}` },
         signal: AbortSignal.timeout(15000)
       });
-      if (!response.ok) throw new Error(`Usage: ${response.status}`);
+      if (!response.ok) throw new Error(`Limits: ${response.status}`);
       const data = await response.json();
       const windows = [data.rate_limit?.primary_window, data.rate_limit?.secondary_window];
-      badge.title = 'Codex remaining usage (↻ time until reset)\n' + render(windows).join('\n');
+      badge.title = 'ChatGPT remaining limits (↻ time until reset)\n' + render(windows).join('\n');
     } catch (error) {
       render();
-      badge.title = `Codex usage unavailable: ${error.message}. Retrying every minute.`;
+      badge.title = `ChatGPT limits unavailable: ${error.message}. Retrying every minute.`;
     } finally {
       busy = false;
     }
