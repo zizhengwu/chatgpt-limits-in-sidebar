@@ -1,0 +1,17 @@
+# Local dependencies and builds
+/dist/
+/.venv/
+node_modules/
+
+# Test output and logs
+/test-results/
+/playwright-report/
+/coverage/
+*.log
+
+# Local configuration
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
