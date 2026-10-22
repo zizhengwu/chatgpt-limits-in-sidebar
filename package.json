@@ -1,0 +1,11 @@
+{
+  "name": "codex-sidebar-usage",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/extension.test.cjs",
+    "images": "node scripts/generate-images.cjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.58.1"
+  }
+}

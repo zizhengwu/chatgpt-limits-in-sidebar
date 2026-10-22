@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Codex Usage in Sidebar — demonstration</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.5 Arial, sans-serif; color: #172b29; background: #f7faf9; }
+  main { height: 800px; padding: 84px 100px; }
+  .eyebrow { font-size: 13px; letter-spacing: 2px; color: #0f766e; font-weight: 700; }
+  h1 { font-size: 52px; line-height: 1.1; letter-spacing: -2px; margin: 24px 0; }
+  .intro { font-size: 21px; color: #536662; max-width: 630px; }
+  .demo { margin-top: 48px; display: flex; align-items: center; gap: 68px; }
+  .sidebar { width: 312px; flex-shrink: 0; background: #fff; border: 1px solid #d8e4df; border-radius: 16px; padding: 20px 12px 12px; box-shadow: 0 16px 40px #173c2d0c; }
+  .nav { padding: 0 10px 30px; color: #536662; font-size: 14px; }
+  .nav p { margin: 9px 0; }
+  .profile { position: relative; }
+  button { position: absolute; inset: 0; width: 100%; border: 0; background: transparent; border-radius: 8px; }
+  .row { position: relative; display: flex; min-width: 0; gap: 8px; align-items: center; pointer-events: none; }
+  .avatar { display: grid; place-items: center; background: #0f766e; color: #fff; width: 28px; height: 28px; border-radius: 50%; font-size: 11px; flex-shrink: 0; }
+  .name { flex: 1; min-width: 0; font-size: 14px; }
+  .plan { color: #6b7370; font-size: 12px; }
+  .notes { font-size: 18px; line-height: 2; }
+  .notes strong { color: #0f766e; }
+  .caption { margin-top: 46px; color: #72817c; font-size: 13px; }
+</style>
+<main>
+  <div class="eyebrow">CODEX USAGE IN SIDEBAR</div>
+  <h1>Your limits, at a glance.</h1>
+  <p class="intro">See remaining Codex usage and reset countdowns beside your ChatGPT profile.</p>
+  <div class="demo">
+    <div class="sidebar">
+      <div class="nav"><p>New chat</p><p>Search chats</p><p>Library</p></div>
+      <div class="profile">
+        <button aria-label="Open profile menu"></button>
+        <div><div class="row"><span class="avatar">A</span><div class="name">Alex<div class="plan">Plus</div></div></div></div>
+      </div>
+    </div>
+    <div class="notes"><strong>5h</strong> &nbsp; 5-hour usage remaining<br><strong>w</strong> &nbsp; Weekly usage remaining<br><strong>↻</strong> &nbsp; Time until your limit resets</div>
+  </div>
+  <p class="caption">Example data in a demonstration sidebar. Independent extension; not affiliated with OpenAI.</p>
+</main>
+</html>

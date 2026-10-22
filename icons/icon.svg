@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <path id="mark" d="M100 39 A44 44 0 1 1 64 20 M43 48 L57 62 L43 76 M69 76 H84"/>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <use href="#mark" stroke="white" stroke-width="12"/>
+    <use href="#mark" stroke="#202124" stroke-width="8"/>
+  </g>
+  <path d="M60 9 L77 20 L60 31 Z" fill="#202124" stroke="white" stroke-width="2" stroke-linejoin="round" paint-order="stroke"/>
+</svg>
