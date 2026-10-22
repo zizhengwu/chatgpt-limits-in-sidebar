@@ -17,8 +17,8 @@ Refreshes every minute while the tab is visible. Hover for reset dates; click to
 
 ## Userscript
 
-With Tampermonkey or Violentmonkey installed, [install the script](https://gitlab.com/zizhengwu/codex-usage/-/raw/main/codex-usage.user.js) and reload ChatGPT. If the link opens as text, paste it into a new script in your userscript manager.
+With Tampermonkey or Violentmonkey installed, [install the script](https://raw.githubusercontent.com/zizhengwu/codex-limits-in-sidebar/main/codex-usage.user.js) and reload ChatGPT. If the link opens as text, paste it into a new script in your userscript manager.
 
 Use either the extension or the userscript. Both need a signed-in ChatGPT account with Codex limits. Changes to ChatGPT's internal API or sidebar may break the display.
 
-[Publishing](PUBLISHING.md) · [Privacy](PRIVACY.md) · [Report a bug](https://gitlab.com/zizhengwu/codex-usage/-/issues)
+[Publishing](PUBLISHING.md) · [Privacy](PRIVACY.md) · [Report a bug](https://github.com/zizhengwu/codex-limits-in-sidebar/issues)

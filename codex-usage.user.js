@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         Codex usage in sidebar
-// @namespace    https://gitlab.com/zizhengwu/codex-usage
+// @namespace    https://github.com/zizhengwu/codex-limits-in-sidebar
 // @version      1.2.1
 // @description  Show remaining Codex limits and reset countdowns beside your profile.
 // @author       zizhengwu
-// @homepageURL  https://gitlab.com/zizhengwu/codex-usage
-// @supportURL   https://gitlab.com/zizhengwu/codex-usage/-/issues
-// @downloadURL  https://gitlab.com/zizhengwu/codex-usage/-/raw/main/codex-usage.user.js
-// @updateURL    https://gitlab.com/zizhengwu/codex-usage/-/raw/main/codex-usage.user.js
+// @homepageURL  https://github.com/zizhengwu/codex-limits-in-sidebar
+// @supportURL   https://github.com/zizhengwu/codex-limits-in-sidebar/issues
+// @downloadURL  https://raw.githubusercontent.com/zizhengwu/codex-limits-in-sidebar/main/codex-usage.user.js
+// @updateURL    https://raw.githubusercontent.com/zizhengwu/codex-limits-in-sidebar/main/codex-usage.user.js
 // @match        https://chatgpt.com/*
 // @grant        none
 // @run-at       document-idle
