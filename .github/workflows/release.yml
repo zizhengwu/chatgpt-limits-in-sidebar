@@ -1,0 +1,49 @@
+name: Build release ZIP
+
+on:
+  push:
+    tags:
+      - 'v*'
+  release:
+    types: [published]
+
+concurrency:
+  group: release-${{ github.event.release.tag_name || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  package:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      RELEASE_TAG: ${{ github.event.release.tag_name || github.ref_name }}
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.RELEASE_TAG }}
+          persist-credentials: false
+
+      - name: Validate version and build ZIP
+        run: |
+          $manifest = Get-Content manifest.json -Raw | ConvertFrom-Json
+          if ($env:RELEASE_TAG -cne "v$($manifest.version)") {
+            throw "Tag $env:RELEASE_TAG must match manifest version v$($manifest.version)."
+          }
+          ./scripts/package.ps1
+          "RELEASE_ZIP=dist/simple-chatgpt-limits-$($manifest.version).zip" >> $env:GITHUB_ENV
+
+      - name: Attach ZIP to GitHub release
+        run: |
+          gh release view $env:RELEASE_TAG --json tagName
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $env:RELEASE_TAG $env:RELEASE_ZIP --clobber
+          } else {
+            gh release create $env:RELEASE_TAG $env:RELEASE_ZIP --verify-tag --generate-notes --title "Simple ChatGPT Limits $env:RELEASE_TAG"
+          }
+          if ($LASTEXITCODE -ne 0) { throw 'Release upload failed.' }
