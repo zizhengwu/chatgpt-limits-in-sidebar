@@ -44,8 +44,7 @@ const root = path.resolve(__dirname, '..');
         // Keep the complete sidebar: the zoom is visibly tied to its bottom corner.
         ctx.drawImage(image, 0, 0, 475, 933, 32, 32, 375, 736);
         text(ctx, 'Simple ChatGPT Limits', 480, 205, 48, true);
-        text(ctx, 'in your sidebar', 480, 265, 48, true);
-        text(ctx, 'Remaining limits and reset times.', 480, 320, 24, false, '#606060');
+        text(ctx, 'Remaining limits and reset times.', 480, 265, 24, false, '#606060');
         connector(ctx, [[385, 722], [442, 722], [442, 522], [480, 522]]);
         ctx.drawImage(image, 16, 820, 438, 104, 480, 435, 728, 173);
       });
