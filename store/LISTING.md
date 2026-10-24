@@ -2,11 +2,11 @@
 
 **Name:** Simple ChatGPT Limits
 
-**Summary:** See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.
+**Summary:** See your remaining ChatGPT limits at a glance, with no floating panel or setup needed.
 
 ## Description
 
-See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.
+See your remaining ChatGPT limits at a glance, with no floating panel or setup needed.
 
 Shows the 5-hour and weekly limits and their reset countdowns. Hover for reset dates or click to open limit settings. Limits refresh every minute while the tab is visible.
 
@@ -18,7 +18,7 @@ Independent extension, not affiliated with OpenAI. Changes to ChatGPT may tempor
 
 ## Privacy fields
 
-- **Single purpose:** Show remaining ChatGPT limits and reset countdowns in the bottom-left sidebar without a floating panel or configuration.
+- **Single purpose:** Show remaining ChatGPT limits and reset countdowns without a floating panel or configuration.
 - **Site access:** `https://chatgpt.com/*` is needed to find the profile row and fetch session and limit data.
 - **Remote code:** None. All code is bundled.
 - **Data handled:** Authentication information (session token), website content (limits), and account details included in the session response. Only the token and limit values are used, in memory. Requests go only to ChatGPT.
@@ -33,7 +33,7 @@ Publish the privacy file before submitting. Match the dashboard disclosures to t
 - [Support](https://github.com/zizhengwu/simple-chatgpt-limits/issues)
 - Icon: `icons/icon-128.png`
 - Promotional image: `store/promo-440x280.png`
-- Screenshot: `store/screenshot-1280x800.png` — actual sidebar with a zoomed crop.
+- Screenshot: `store/screenshot-1280x800.png` — extension screenshot with a zoomed crop.
 
 ## Reviewer instructions
 

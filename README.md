@@ -1,8 +1,8 @@
 # Simple ChatGPT Limits
 
-See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.
+See your remaining ChatGPT limits at a glance, with no floating panel or setup needed.
 
-![ChatGPT limits and reset countdowns in the ChatGPT sidebar](store/screenshot-1280x800.png)
+![Simple ChatGPT Limits showing remaining limits and reset countdowns](store/screenshot-1280x800.png)
 
 ## Chrome extension
 

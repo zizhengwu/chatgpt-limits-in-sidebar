@@ -2,7 +2,7 @@
 // @name         Simple ChatGPT Limits
 // @namespace    https://github.com/zizhengwu/simple-chatgpt-limits
 // @version      1.2.2
-// @description  See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.
+// @description  See your remaining ChatGPT limits at a glance, with no floating panel or setup needed.
 // @author       zizhengwu
 // @homepageURL  https://github.com/zizhengwu/simple-chatgpt-limits
 // @supportURL   https://github.com/zizhengwu/simple-chatgpt-limits/issues
