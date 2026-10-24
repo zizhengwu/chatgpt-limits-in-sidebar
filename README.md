@@ -6,6 +6,10 @@ See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with n
 
 ## Chrome extension
 
+[Install Simple ChatGPT Limits from the Chrome Web Store](https://chromewebstore.google.com/detail/chatgpt-limits-in-sidebar/embgehonmfhhdcdjdmajjdcipnklpjcg). Then reload ChatGPT and expand the sidebar.
+
+### Install locally
+
 1. Open `chrome://extensions` and turn on **Developer mode**.
 2. Click **Load unpacked** and select this folder.
 3. Reload ChatGPT and expand the sidebar.
