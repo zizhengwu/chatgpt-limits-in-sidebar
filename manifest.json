@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Simple ChatGPT Limits",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.",
   "homepage_url": "https://github.com/zizhengwu/simple-chatgpt-limits",
   "icons": {
