@@ -16,7 +16,7 @@ foreach ($file in $files) {
 }
 $dist = Join-Path $projectRoot 'dist'
 New-Item -ItemType Directory -Path $dist -Force | Out-Null
-$zipPath = Join-Path $dist "chatgpt-limits-$($manifest.version).zip"
+$zipPath = Join-Path $dist "simple-chatgpt-limits-$($manifest.version).zip"
 $stream = [System.IO.File]::Open($zipPath, [System.IO.FileMode]::Create)
 try {
     $archive = [System.IO.Compression.ZipArchive]::new($stream, [System.IO.Compression.ZipArchiveMode]::Create)

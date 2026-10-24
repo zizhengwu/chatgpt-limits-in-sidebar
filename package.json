@@ -1,5 +1,5 @@
 {
-  "name": "chatgpt-limits-in-sidebar",
+  "name": "simple-chatgpt-limits",
   "description": "See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.",
   "private": true,
   "scripts": {

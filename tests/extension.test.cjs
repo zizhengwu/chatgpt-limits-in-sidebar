@@ -80,14 +80,14 @@ test('installed extension renders, refreshes, recovers, and opens its popup', as
       const manager = document.querySelector('extensions-manager').shadowRoot;
       const list = manager.querySelector('extensions-item-list').shadowRoot;
       return [...list.querySelectorAll('extensions-item')]
-        .find(item => item.data.name === 'ChatGPT Limits in Sidebar')?.id;
+        .find(item => item.data.name === 'Simple ChatGPT Limits')?.id;
     });
     assert.ok(extensionId, 'Chrome registered the unpacked extension');
     const popup = await context.newPage();
     const popupErrors = [];
     popup.on('pageerror', error => popupErrors.push(error.message));
     await popup.goto(`chrome-extension://${extensionId}/popup.html`);
-    assert.equal(await popup.locator('h1').innerText(), 'ChatGPT Limits\nin Sidebar');
+    assert.equal(await popup.locator('h1').innerText(), 'Simple ChatGPT\nLimits');
     assert.equal(await popup.locator('a.button').getAttribute('href'), 'https://chatgpt.com/settings/usage?tab=overview');
     assert.equal(await popup.locator('img').evaluate(img => img.complete && img.naturalWidth), 48);
     assert.deepEqual(popupErrors, []);

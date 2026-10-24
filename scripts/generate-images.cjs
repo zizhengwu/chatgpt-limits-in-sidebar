@@ -43,7 +43,7 @@ const root = path.resolve(__dirname, '..');
       make('store/screenshot-1280x800.png', 1280, 800, ctx => {
         // Keep the complete sidebar: the zoom is visibly tied to its bottom corner.
         ctx.drawImage(image, 0, 0, 475, 933, 32, 32, 375, 736);
-        text(ctx, 'ChatGPT limits', 480, 205, 48, true);
+        text(ctx, 'Simple ChatGPT Limits', 480, 205, 48, true);
         text(ctx, 'in your sidebar', 480, 265, 48, true);
         text(ctx, 'Remaining limits and reset times.', 480, 320, 24, false, '#606060');
         connector(ctx, [[385, 722], [442, 722], [442, 522], [480, 522]]);
@@ -51,8 +51,8 @@ const root = path.resolve(__dirname, '..');
       });
       make('store/promo-440x280.png', 440, 280, ctx => {
         ctx.drawImage(image, 0, 0, 475, 933, 8, 8, 134, 264);
-        text(ctx, 'ChatGPT limits', 160, 50, 26, true);
-        text(ctx, 'in your sidebar', 160, 83, 26, true);
+        text(ctx, 'Simple ChatGPT', 160, 50, 26, true);
+        text(ctx, 'Limits', 160, 83, 26, true);
         text(ctx, 'Limits · Reset times', 160, 117, 15, false, '#606060');
         connector(ctx, [[135, 255], [151, 255], [151, 194], [162, 194]]);
         ctx.drawImage(image, 238, 829, 211, 89, 162, 144, 260, 110);

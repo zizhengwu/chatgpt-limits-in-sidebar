@@ -1,6 +1,6 @@
 # Chrome Web Store listing
 
-**Name:** ChatGPT Limits in Sidebar
+**Name:** Simple ChatGPT Limits
 
 **Summary:** See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.
 
@@ -23,14 +23,14 @@ Independent extension, not affiliated with OpenAI. Changes to ChatGPT may tempor
 - **Remote code:** None. All code is bundled.
 - **Data handled:** Authentication information (session token), website content (limits), and account details included in the session response. Only the token and limit values are used, in memory. Requests go only to ChatGPT.
 - **Data use:** No selling, unrelated use, or use for credit or lending decisions.
-- **Privacy URL:** https://github.com/zizhengwu/chatgpt-limits-in-sidebar/blob/main/PRIVACY.md
+- **Privacy URL:** https://github.com/zizhengwu/simple-chatgpt-limits/blob/main/PRIVACY.md
 
 Publish the privacy file before submitting. Match the dashboard disclosures to this data handling, including data processed only in memory.
 
 ## Links and images
 
-- [Homepage](https://github.com/zizhengwu/chatgpt-limits-in-sidebar)
-- [Support](https://github.com/zizhengwu/chatgpt-limits-in-sidebar/issues)
+- [Homepage](https://github.com/zizhengwu/simple-chatgpt-limits)
+- [Support](https://github.com/zizhengwu/simple-chatgpt-limits/issues)
 - Icon: `icons/icon-128.png`
 - Promotional image: `store/promo-440x280.png`
 - Screenshot: `store/screenshot-1280x800.png` — actual sidebar with a zoomed crop.

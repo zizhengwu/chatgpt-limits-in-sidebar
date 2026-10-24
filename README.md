@@ -1,4 +1,4 @@
-# ChatGPT limits in sidebar
+# Simple ChatGPT Limits
 
 See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.
 
@@ -12,7 +12,7 @@ See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with n
 
 ## Userscript
 
-With Tampermonkey or Violentmonkey installed, [install the script](https://raw.githubusercontent.com/zizhengwu/chatgpt-limits-in-sidebar/main/chatgpt-limits.user.js) and reload ChatGPT.
+With Tampermonkey or Violentmonkey installed, [install the script](https://raw.githubusercontent.com/zizhengwu/simple-chatgpt-limits/main/chatgpt-limits.user.js) and reload ChatGPT.
 
 
-[Privacy](PRIVACY.md) · [Report a bug](https://github.com/zizhengwu/chatgpt-limits-in-sidebar/issues)
+[Privacy](PRIVACY.md) · [Report a bug](https://github.com/zizhengwu/simple-chatgpt-limits/issues)

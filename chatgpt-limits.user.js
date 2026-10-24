@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name         ChatGPT limits in sidebar
-// @namespace    https://github.com/zizhengwu/chatgpt-limits-in-sidebar
+// @name         Simple ChatGPT Limits
+// @namespace    https://github.com/zizhengwu/simple-chatgpt-limits
 // @version      1.2.1
 // @description  See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.
 // @author       zizhengwu
-// @homepageURL  https://github.com/zizhengwu/chatgpt-limits-in-sidebar
-// @supportURL   https://github.com/zizhengwu/chatgpt-limits-in-sidebar/issues
-// @downloadURL  https://raw.githubusercontent.com/zizhengwu/chatgpt-limits-in-sidebar/main/chatgpt-limits.user.js
-// @updateURL    https://raw.githubusercontent.com/zizhengwu/chatgpt-limits-in-sidebar/main/chatgpt-limits.user.js
+// @homepageURL  https://github.com/zizhengwu/simple-chatgpt-limits
+// @supportURL   https://github.com/zizhengwu/simple-chatgpt-limits/issues
+// @downloadURL  https://raw.githubusercontent.com/zizhengwu/simple-chatgpt-limits/main/chatgpt-limits.user.js
+// @updateURL    https://raw.githubusercontent.com/zizhengwu/simple-chatgpt-limits/main/chatgpt-limits.user.js
 // @match        https://chatgpt.com/*
 // @grant        none
 // @run-at       document-idle
