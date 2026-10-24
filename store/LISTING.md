@@ -37,4 +37,4 @@ Publish the privacy file before submitting. Match the dashboard disclosures to t
 
 ## Reviewer instructions
 
-Sign in to ChatGPT with an account that has ChatGPT limits, reload, and expand the sidebar. Check the limits at the bottom of the sidebar, hover for reset dates, and click to open settings. The toolbar popup also links to settings. Unavailable data appears as dashes.
+Sign in to ChatGPT with an account that has ChatGPT limits, reload, and expand the sidebar. Check the limits at the bottom of the sidebar, hover for reset dates, and click to open settings. Unavailable data appears as dashes.

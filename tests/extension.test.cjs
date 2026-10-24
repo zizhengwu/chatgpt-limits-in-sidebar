@@ -6,7 +6,7 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright-core')
 const root = path.resolve(__dirname, '..');
 const manifest = require('../manifest.json');
 
-test('installed extension renders, refreshes, recovers, and opens its popup', async () => {
+test('installed extension renders, refreshes, and recovers', async () => {
   const context = await chromium.launchPersistentContext('', {
     channel: 'chromium',
     headless: true,
@@ -83,14 +83,7 @@ test('installed extension renders, refreshes, recovers, and opens its popup', as
         .find(item => item.data.name === 'Simple ChatGPT Limits')?.id;
     });
     assert.ok(extensionId, 'Chrome registered the unpacked extension');
-    const popup = await context.newPage();
-    const popupErrors = [];
-    popup.on('pageerror', error => popupErrors.push(error.message));
-    await popup.goto(`chrome-extension://${extensionId}/popup.html`);
-    assert.equal(await popup.locator('h1').innerText(), 'Simple ChatGPT\nLimits');
-    assert.equal(await popup.locator('a.button').getAttribute('href'), 'https://chatgpt.com/settings/usage?tab=overview');
-    assert.equal(await popup.locator('img').evaluate(img => img.complete && img.naturalWidth), 48);
-    assert.deepEqual(popupErrors, []);
+    assert.equal(manifest.action, undefined);
     assert.deepEqual(manifest.content_scripts[0].matches, ['https://chatgpt.com/*']);
     assert.equal(manifest.permissions, undefined);
     assert.equal(manifest.host_permissions, undefined);

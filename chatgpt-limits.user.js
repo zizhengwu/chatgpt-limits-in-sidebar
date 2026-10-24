@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Simple ChatGPT Limits
 // @namespace    https://github.com/zizhengwu/simple-chatgpt-limits
-// @version      1.2.3
+// @version      1.2.4
 // @description  See your remaining ChatGPT limits at a glance, with no floating panel or setup needed.
 // @author       zizhengwu
 // @homepageURL  https://github.com/zizhengwu/simple-chatgpt-limits

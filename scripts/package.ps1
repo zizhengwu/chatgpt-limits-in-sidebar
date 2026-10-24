@@ -7,7 +7,7 @@ if ($source -notmatch '(?m)^// @version\s+([^\r\n]+)' -or $Matches[1].Trim() -ne
 }
 
 # Explicit allowlist keeps development files and store artwork out of the upload.
-$files = @('manifest.json', 'popup.html', 'popup.css') +
+$files = @('manifest.json') +
     @($manifest.content_scripts.js) + @($manifest.icons.PSObject.Properties.Value)
 foreach ($file in $files) {
     if (-not (Test-Path -LiteralPath (Join-Path $projectRoot $file) -PathType Leaf)) {
