@@ -45,7 +45,14 @@ test('installed extension renders, refreshes, and recovers', async () => {
     }));
     const before = await geometry();
     assert.deepEqual(before.slice(0, 4), before.slice(4));
-    assert.equal(await badge.getAttribute('href'), '/settings/usage?tab=overview');
+    assert.equal(await badge.getAttribute('href'), null);
+    await page.getByRole('button', { name: 'Open profile menu' }).evaluate(button => {
+      button.addEventListener('click', () => button.setAttribute('data-clicked', 'true'));
+    });
+    const bounds = await badge.boundingBox();
+    await page.mouse.click(bounds.x + bounds.width / 2, bounds.y + bounds.height / 2);
+    assert.equal(await page.getByRole('button', { name: 'Open profile menu' }).getAttribute('data-clicked'), 'true');
+    assert.equal(page.url(), 'https://chatgpt.com/');
     assert.ok(!(await badge.getAttribute('aria-label')).includes('fixture-token'));
 
     const refresh = async next => {

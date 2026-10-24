@@ -8,7 +8,7 @@
 
 See your remaining ChatGPT limits at a glance, with no floating panel or setup needed.
 
-Shows the 5-hour and weekly limits and their reset countdowns. Hover for reset dates or click to open limit settings. Limits refresh every minute while the tab is visible.
+Shows the 5-hour and weekly limits and their reset countdowns. Clicking the limits area opens the normal ChatGPT profile menu. Limits refresh every minute while the tab is visible.
 
 After installing, reload ChatGPT and expand the sidebar. You'll need a signed-in ChatGPT account. A dash means the data is unavailable.
 
@@ -37,4 +37,4 @@ Publish the privacy file before submitting. Match the dashboard disclosures to t
 
 ## Reviewer instructions
 
-Sign in to ChatGPT with an account that has ChatGPT limits, reload, and expand the sidebar. Check the limits at the bottom of the sidebar, hover for reset dates, and click to open settings. Unavailable data appears as dashes.
+Sign in to ChatGPT with an account that has ChatGPT limits, reload, and expand the sidebar. Check the limits at the bottom of the sidebar and confirm that clicking the limits area opens the normal profile menu. Unavailable data appears as dashes.

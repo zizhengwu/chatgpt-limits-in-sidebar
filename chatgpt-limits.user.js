@@ -32,9 +32,8 @@
       font-variant-numeric: tabular-nums;
       text-decoration: none;
       white-space: nowrap;
-      pointer-events: auto;
+      pointer-events: none;
     }
-    #chatgpt-limits:hover { opacity: .7; }
     #chatgpt-limits > .limits-percent { text-align: right; }
     #chatgpt-limits > .limits-reset { text-align: center; }
     #chatgpt-limits > .limits-label,
@@ -42,9 +41,9 @@
   `;
   document.head.append(style);
 
-  const badge = document.createElement('a');
+  const badge = document.createElement('div');
   badge.id = 'chatgpt-limits';
-  badge.href = '/settings/usage?tab=overview';
+  badge.setAttribute('role', 'img');
   badge.title = 'ChatGPT limits: loading…';
 
   const labels = ['5-hour', 'Weekly'];
@@ -84,7 +83,7 @@
       }
       details.push(`${labels[i]}: ${left === '—' ? 'unavailable' : left + ' left'}; resets: ${validReset ? reset.toLocaleString() : 'unavailable'}`);
     });
-    badge.setAttribute('aria-label', `ChatGPT remaining limits. ${details.join('. ')}. Open limit settings.`);
+    badge.setAttribute('aria-label', `ChatGPT remaining limits. ${details.join('. ')}.`);
     return details;
   }
   render();
