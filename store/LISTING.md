@@ -2,11 +2,13 @@
 
 **Name:** ChatGPT Limits in Sidebar
 
-**Summary:** See remaining ChatGPT limits and reset countdowns beside your ChatGPT profile.
+**Summary:** See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.
 
 ## Description
 
-See your remaining 5-hour and weekly ChatGPT limits in ChatGPT's sidebar. Hover for reset dates or click to open limit settings. Limits refresh every minute while the tab is visible.
+See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.
+
+Shows the 5-hour and weekly limits and their reset countdowns. Hover for reset dates or click to open limit settings. Limits refresh every minute while the tab is visible.
 
 After installing, reload ChatGPT and expand the sidebar. You'll need a signed-in ChatGPT account. A dash means the data is unavailable.
 
@@ -16,7 +18,7 @@ Independent extension, not affiliated with OpenAI. Changes to ChatGPT may tempor
 
 ## Privacy fields
 
-- **Single purpose:** Show remaining ChatGPT limits and reset countdowns in ChatGPT's sidebar.
+- **Single purpose:** Show remaining ChatGPT limits and reset countdowns in the bottom-left sidebar without a floating panel or configuration.
 - **Site access:** `https://chatgpt.com/*` is needed to find the profile row and fetch session and limit data.
 - **Remote code:** None. All code is bundled.
 - **Data handled:** Authentication information (session token), website content (limits), and account details included in the session response. Only the token and limit values are used, in memory. Requests go only to ChatGPT.
@@ -35,4 +37,4 @@ Publish the privacy file before submitting. Match the dashboard disclosures to t
 
 ## Reviewer instructions
 
-Sign in to ChatGPT with an account that has ChatGPT limits, reload, and expand the sidebar. Check the limits beside the profile, hover for reset dates, and click to open settings. The toolbar popup also links to settings. Unavailable data appears as dashes.
+Sign in to ChatGPT with an account that has ChatGPT limits, reload, and expand the sidebar. Check the limits at the bottom of the sidebar, hover for reset dates, and click to open settings. The toolbar popup also links to settings. Unavailable data appears as dashes.

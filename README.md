@@ -1,6 +1,6 @@
 # ChatGPT limits in sidebar
 
-Shows your remaining 5-hour and weekly ChatGPT limits beside your ChatGPT profile.
+See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.
 
 ![ChatGPT limits and reset countdowns in the ChatGPT sidebar](store/screenshot-1280x800.png)
 

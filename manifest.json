@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "ChatGPT Limits in Sidebar",
   "version": "1.2.1",
-  "description": "See remaining ChatGPT limits and reset countdowns beside your ChatGPT profile.",
+  "description": "See your remaining ChatGPT limits at a glance in the bottom-left sidebar, with no floating panel or setup needed.",
   "homepage_url": "https://github.com/zizhengwu/chatgpt-limits-in-sidebar",
   "icons": {
     "16": "icons/icon-16.png",
